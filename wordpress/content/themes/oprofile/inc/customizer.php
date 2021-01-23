@@ -33,6 +33,17 @@ function oprofile_theme_customize_register($wp_customize)
         ]
     );
 
+    $wp_customize->add_setting(
+        'oprofile_theme_footer_color',
+        [
+            'default'    => '#333333',
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'refresh',
+            'sanitize_callback'  => 'esc_attr',
+        ],
+    );
+
     // 4. on créé un control
     // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
     $wp_customize->add_control(
@@ -44,6 +55,27 @@ function oprofile_theme_customize_register($wp_customize)
         ]
     );
 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control($wp_customize,
+        'oprofile_theme_footer_color',
+        [
+            'label'      => 'Footer Background Color',
+            'settings'   => 'oprofile_theme_footer_color',
+            'section'    => 'oprofile_theme_footer',
+        ],
+    ));
+
 }
 
 add_action('customize_register', 'oprofile_theme_customize_register');
+
+function oprofile_customizer_css() {
+    ?>
+    <style type="text/css">
+      .footer  {
+        background-color: <?php echo get_theme_mod( 'oprofile_theme_footer_color' ); ?>;
+        }
+    </style>
+    <?php
+};
+add_action( 'wp_head', 'oprofile_customizer_css' );
