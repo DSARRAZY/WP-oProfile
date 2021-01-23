@@ -1,0 +1,14 @@
+utilise, 1N Projet, 0N Technologie
+Technologie: idTechnologie, nom, logo
+maîtrise, 0N Développeur, 0N Technologie : niveau
+:
+
+Projet: idProjet, nom, description, url
+développe, 0N Développeur, 1N Projet
+Développeur: idDéveloppeur, prénom, nom, pseudo, email, biographie, urlSite, urlGitHub
+:
+
+imagine, 1N Client, 1N Projet
+Client: idClient, nom, email, biographie, urlSite, urlGitHub
+intervient, 0N Secteur d'activité, 1N Client
+Secteur d'activité: idSecteurActivité, nom

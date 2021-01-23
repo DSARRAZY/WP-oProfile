@@ -1,0 +1,87 @@
+.footer {
+    background-color: $grey-blue;
+    color: $white;
+    padding: 1em;
+
+    &__info {
+
+        @include medium {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    
+    &__item {
+        border-bottom: 1px solid lighten($violet, 20%);
+        display: flex;
+        margin-bottom: 1em;
+        padding: 1em 0;
+        
+        @include medium {
+            width: 30%;
+        }
+        
+        @include small-only {
+            // https://developer.mozilla.org/fr/docs/Web/CSS/:nth-of-type
+            // permet de cibler le 3e element qui a la classe .footer__item
+            &:nth-of-type(3) {
+                border: none;
+                margin-bottom: 2em;
+            }
+        }
+    
+        &-icon {
+            color: lighten($violet, 20%);
+            padding-right: 1em;
+            text-align: right;
+            width: 15%;
+        }
+
+        &-text h3 {
+            font-family: $font-title;
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+    }
+
+    &__links {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 2em;
+        
+        &__item {
+            margin-bottom: 1em;
+            padding: 0 1em;
+            text-align: center;
+            width: 50%;
+
+            @include large {
+                width: auto;
+            }
+
+            a {
+                color: $white;
+            }
+        }
+    }
+
+    .social {
+        margin-bottom: 1em;
+
+        &__links {
+            display: flex;
+            justify-content: center;
+
+            li {
+                display: inline-block;
+                margin: 0 1em;
+
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

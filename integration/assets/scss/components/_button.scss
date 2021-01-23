@@ -1,0 +1,22 @@
+.button {
+    border: 3px solid $button-main-color;
+    color: $button-main-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em;
+    font-size: $font-size-small;
+
+    // on créé un pseudo élément  ::after pour gérer la flèche de font-awesome
+    // https://developer.mozilla.org/fr/docs/Web/CSS/::after
+    &::after {
+        content: '\f30b';
+        font-family: $font-awesome;
+        padding-left: 1em;
+    }
+
+    &:hover {
+        color: $main-text-color;
+        background-color: $button-main-color;
+    }
+}

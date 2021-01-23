@@ -1,0 +1,75 @@
+function oprofile_register_cpt_project()
+{
+
+    // array qui contient nos labels (UI du back office) pour notre CPT
+    $labels = [
+        'name' => 'Projets',
+        'singular_name' => 'Projet',
+        'edit_item' => 'Modifier le projet',
+        'search_items' => 'Rechercher un projet'
+    ];
+
+    // register_post_type() permet de déclarer un nouveau CPT
+    // ici, on souhaite ajouter un custom post type "Projets"
+    register_post_type(
+        'project', // clef/identifiant du CPT
+        [
+            'labels' => $labels, // les labels (UI)
+            'public' => true, // impact plusieurs options (RTFM) - permet de rendre le CPT accessible dans le back-office et sur les templates
+            'hierarchical' => true, // CTP hiérarchique ou non
+            'show_in_rest' => true, // permet de profiter de l'éditeur "Gutenberg"
+            'menu_icon' => 'dashicons-open-folder', // icône à afficher dans le menu du BO
+a                'title', // titre
+                'editor', // éditeur
+                'thumbnail', // images mises en avant
+                'page-attributes', // attributs de pages
+                'custom-fields'
+                ]
+        ]
+    );
+}
+
+function oprofile_register_taxo_technology()
+{
+
+    $labels = [
+        'name' => 'Technologies',
+        'singular_name' => 'Technologie',
+        'add_new_item' => 'Ajouter une technologie'
+    ];
+
+    // register_taxonomy() permet de déclarer/modifier une taxo
+    register_taxonomy(
+        'technology', // clef/identifiant
+        ['project', 'post'], // on associe la taxo à un ou plusieurs types de contenu
+        [
+            // même chose que pour les CPT
+            'labels' => $labels,
+            'public' => true,
+            'hierarchical' => true,
+            'show_in_rest' => true
+        ]
+    );
+}
+
+// on accroche les fonctions sur le hook init
+add_action('init', 'oprofile_register_cpt_project');
+add_action('init', 'oprofile_register_taxo_technology');
+
+// fonction executée à l'activation du plugin
+function oprofile_activation() {
+    oprofile_register_cpt_project();
+    oprofile_register_taxo_technology();
+    flush_rewrite_rules();
+}
+
+// fonction executée à la désactivation du plugin
+function oprofile_deactivation() {
+    flush_rewrite_rules();
+}
+
+// execute la fonction oprofile_activation() à l'activation du plugin
+register_activation_hook('__FILE__', 'oprofile_activation');
+
+// execute la fonction oprofile_deactivation() à la désactivation du plugin
+register_deactivation_hook('__FILE__', 'oprofile_deactivation');

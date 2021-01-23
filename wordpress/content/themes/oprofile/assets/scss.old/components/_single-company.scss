@@ -1,0 +1,43 @@
+.company-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.company {
+    color: $grey-blue;
+    padding: 1em;
+
+    @include small-only {
+        // odd => impair
+        // https://developer.mozilla.org/fr/docs/Web/CSS/:nth-child#valeurs_avec_un_mot-cl%C3%A9
+        &:nth-child(odd) {
+            background-color: $light-blue;
+        }
+    }
+
+    @include medium {
+        width: 50%;
+
+        // on souhaite cibler tous les 4 éléments
+        // mais aussi le 1er + tous les 4 éléments + 1
+        &:nth-child(4n),
+        &:nth-child(4n+1) {
+            background-color: $light-blue;
+        }
+    }
+    
+
+    &__logo {
+        display: block;
+        margin: 0 auto 1em auto;
+    }
+
+    &__title {
+        font-family: $font-title;
+        margin-bottom: 1em;
+    }
+
+    &__text {
+        padding: 0;
+    }
+}

@@ -1,0 +1,36 @@
+.technolgy-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.technology {
+    padding: 1em;
+
+    @include medium {
+        width: 50%;
+        &:nth-child(3n+1),
+        &:nth-child(4n+1) {
+            background-color: $light-blue;
+        }
+    }
+
+    @include small-only {
+        &:nth-child(odd) {
+            background-color: $light-blue;
+        }
+    }
+
+    &__logo {
+        display: block;
+        margin: 0 auto 1em auto;
+    }
+
+    &__title {
+        color: $black;
+        font-family: $font-title;
+        margin-bottom: 1em;
+    }
+
+    &__text {
+        padding: 0;
+    }
+}

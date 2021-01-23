@@ -1,0 +1,9 @@
+wp-config.php
+vendor/
+wp/
+/content/upgrade
+/content/plugins/*/
+/content/themes/*/
+!/content/themes/oprofile/
+!/content/plugins/oprofile/
+!/content/plugins/demo-plugin/

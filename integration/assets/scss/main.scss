@@ -1,0 +1,32 @@
+// on force le charset en UTF-8
+@charset 'UTF-8';
+
+// on importe nos fichiers "abstraits" (variables, les mixins...)
+@import
+    'abstracts/variables',
+    'abstracts/mixins',
+    'abstracts/fonts';
+
+// on immporte nos fichiers qui définisent le rendu général de nos pages (layout)
+@import
+    'layout/header',
+    'layout/global',
+    'layout/footer';
+
+@import
+    'pages/archive';
+
+// on importe nos fichiers de composants (modules graphiques réutilisables)
+@import
+    'components/button',
+    'components/main-menu',
+    'components/single-company',
+    'components/single-post',
+    'components/top-bar',
+    'components/profile-card',
+    'components/excerpt',
+    'components/skill',
+    'components/technology';
+
+// on importe le fichier de la honte (fichier "rustine" pour modifications provisoires)
+@import 'shame';

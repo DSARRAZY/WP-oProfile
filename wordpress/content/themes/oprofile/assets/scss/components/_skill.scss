@@ -1,0 +1,53 @@
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        
+        background-color: lighten($grey, 15%);
+        border: 1px solid $grey;
+        border-bottom: none;
+        color: $black;
+        padding: 1em;
+        position: relative;
+        width: 100%;
+
+        @include large {
+            width: 50%;
+            border-bottom: 1px solid $grey;
+            border-left: none;
+        }
+
+        &__title {
+            font-family: $font-title;
+            margin-bottom: 1em;
+        }
+
+        &__text {
+            display: none;
+            padding {
+                top: 1em;
+                right:  1em*4
+            }
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        &__icon {
+            align-items: center;
+            background-color: $dark-blue;
+            border-radius: 0.5em;
+            color: $white;
+            display: flex;
+            justify-content: center;
+            height: 1em * 2.5;
+            padding: 0.5em;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            width: 1em * 2.5;
+        }
+    }
+}

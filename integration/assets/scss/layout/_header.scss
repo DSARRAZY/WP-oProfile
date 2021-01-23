@@ -1,0 +1,32 @@
+.header {
+    background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.2)), url('https://source.unsplash.com/1J_vfRmiOhE');
+    background-size: cover;
+    background-position: top;
+    padding: 2em 1em;
+    min-height: 50vh;
+
+    &--small {
+        min-height: 0;
+        height: 0;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+
+        // https://sass-lang.com/documentation/style-rules/parent-selector
+
+        &__title {
+            font-family: $font-title;
+            font-size: 2em;
+            width: 70%;
+            margin-bottom: 1em;
+        }
+
+        &__text {
+            width: 70%;
+            margin-bottom: 2em;
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+{
+    "name": "teacher/wp-install-composer",
+    "description": "WordPress custom install with composer",
+    "authors": [
+        {
+            "name": "LorisOclock",
+            "email": "loris@oclock.io"
+        }
+    ],
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "^5.6",
+        "wpackagist-theme/twentytwenty": "^1.6",
+        "wpackagist-plugin/query-monitor": "^3.6",
+        "wpackagist-plugin/fakerpress": "^0.5.1",
+        "wpackagist-plugin/advanced-custom-fields": "^5.9",
+        "wpackagist-plugin/advanced-custom-fields-font-awesome": "^3.1"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "content/themes/{$name}": ["type:wordpress-theme"],
+            "content/plugins/{$name}": ["type:wordpress-plugin"]
+        }
+    }
+}

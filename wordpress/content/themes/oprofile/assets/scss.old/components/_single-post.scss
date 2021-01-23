@@ -1,0 +1,10 @@
+.single-post {
+    &__featured {
+        width: 100%;
+    }
+
+    &__meta {
+        color: darken($grey, 20%);
+        padding: 1em;
+    }
+}

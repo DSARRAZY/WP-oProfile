@@ -1,0 +1,51 @@
+body {
+    background-color: lighten($body-background-color, 10%);
+    font-family: $font-main;
+
+    // TODO
+    color: $white;
+
+    // https://developer.mozilla.org/fr/docs/Web/CSS/box-sizing
+    * {
+        box-sizing: border-box;
+    }
+
+    section {
+        background-color: $white;
+        margin-bottom: 2em; 
+
+        h2.section-title {
+            color: $grey-blue;
+            border-bottom: 3px solid $blue;
+            font-family: $font-title;
+            font-size: 1.5em;
+            width:50%;
+            font-weight: bold;
+            margin: 2em 1em;
+            padding: 1em 0;
+        }
+
+        h3.section-title {
+            color: $black;
+            font-size: 1.1em;
+            font-family: $font-title;
+            padding: 1em;
+        }
+
+    }
+
+// TODO
+
+    main {
+
+        p {
+            color: $black;
+            padding: 1em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+}

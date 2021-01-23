@@ -1,0 +1,40 @@
+// couleurs
+$blue: #6fb4fd;
+$violet: #8d82c4;
+$light-blue: #ebf0fb;
+$grey-blue: #242943;
+$red: #e56555;
+$yellow: #de9d5e;
+$dark-blue: #6489df;
+$green: #65b48a;
+$white: #fff;
+$grey: rgb(212, 209, 209);
+$black: #000;
+
+$main-text-color: $white;
+$alt-text-color: $black;
+$button-main-color: $blue;
+$body-background-color: $grey;
+$title-color: $grey-blue;
+
+$excerpt-rotation-color-list: (
+    1: $light-blue,
+    2: $violet,
+    3: $red,
+    4: $yellow,
+    5: $blue,
+    6: $green
+);
+
+// fonts (typo et tailles)
+$font-title: 'Roboto Slab', serif;
+$font-main: 'PT Sans', sans-serif;
+$font-awesome: 'Font Awesome 5 Free';
+$font-size-small: 0.6em;
+$font-size-medium: 1em;
+$font-size-large: 2em;
+
+// breakpoints
+$breakpoint-medium: 500px;
+$breakpoint-large: 800px;
+$breakpoint-extra-large:1200px;

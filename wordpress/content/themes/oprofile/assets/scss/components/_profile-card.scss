@@ -1,0 +1,73 @@
+.profile-card {
+
+    background-color: transparent;
+    color: $white;
+    height: 50vh;
+    position: relative;
+
+    &__portrait {
+        background-position: center;
+        background-size: cover;
+        bottom: 0;
+        left: 0; 
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+    
+    &__info {
+        background: transparentize(#000000, 0.5);
+        bottom: 0;
+        left: 0; 
+        position: absolute;
+        padding: 1em;
+        right: 0;
+
+        h2 {
+            font-family: $font-title;
+            font-size: 2rem;
+            text-align: center;
+            margin: {
+                bottom: 2em;
+                top: 1em;
+            }
+        }
+
+        &__item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1em;
+
+            & > div {
+                font-size: 1.2rem;
+                margin: 0 0.5em;
+
+                &:first-of-type {
+                    text-align: right;
+                }
+            }
+        }
+
+        &__status {
+            margin-bottom: 1em;
+            text-align: center;
+
+            &--available {
+                i {
+                    color: $green;
+                }
+            }
+
+            &--unavailable {
+                i {
+                    color: $red;
+                }
+            }
+        }
+        
+        &__cta {
+            text-align: center;
+        }
+    }
+}

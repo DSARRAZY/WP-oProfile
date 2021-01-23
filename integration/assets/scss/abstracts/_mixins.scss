@@ -1,0 +1,25 @@
+// les mixins suivantes crééent des media queries réutilisables simplement
+
+@mixin small-only {
+    @media (max-width: $breakpoint-medium) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width: $breakpoint-medium) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: $breakpoint-large) {
+        @content;
+    }
+}
+
+@mixin extra-large {
+    @media (min-width: $breakpoint-extra-large) {
+        @content;
+    }
+}

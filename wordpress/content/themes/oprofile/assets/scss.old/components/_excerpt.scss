@@ -1,0 +1,100 @@
+.excerpt-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.excerpt {
+  background-position: center;
+  background-size: cover;
+  padding: 2em 1em;
+  position: relative;
+  text-shadow: 0px 0px 10px #000;
+  z-index: 10;
+
+  @include medium {
+    width: 50%;
+  }
+
+  // autre exemple d'utilisation des mixins "média queries"
+  // @include large {
+  //   width: calc(100% / 3);
+  // }
+
+  a {
+    text-decoration: none;
+  }
+
+  // .excerpt__title
+  &__title {
+    border-bottom: 2px solid $white;
+    color: $white;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 2em;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: $white;
+    padding: 0;
+    line-height: 1.3;
+  }
+
+  &::after {
+    background-color: #000;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.7;
+    z-index: -1;
+    transition: opacity 0.2s;
+  }
+
+  // pour chaque item dans l'"array associatif" $excerpt-rotation-color-list
+  @each $index,
+  $color in $excerpt-rotation-color-list {
+
+    // $index => index de l'item courant
+    // $color => couleur de l'item courant
+
+    // on cible les pseudo élément tous les 6n + $index
+    // https://developer.mozilla.org/fr/docs/Web/CSS/:nth-child
+    &:nth-child(6n+#{$index})::after {
+      // et on y applique $color en background
+      background-color: darken($color, 10%);
+    }
+  }
+
+  // le code ci-dessus génère en CSS le code ci-dessous
+
+  // .excerpt:nth-child(6n+1)::after {
+  //   background-color: #c1d0f3;
+  // }
+  // .excerpt:nth-child(6n+2)::after {
+  //   background-color: #6d5fb4;
+  // }
+  // .excerpt:nth-child(6n+3)::after {
+  //   background-color: #de3d29;
+  // }
+  // .excerpt:nth-child(6n+4)::after {
+  //   background-color: #d58334;
+  // }
+  // .excerpt:nth-child(6n+5)::after {
+  //   background-color: #3d9afc;
+  // }
+  // .excerpt:nth-child(6n+6)::after {
+  //   background-color: #4b9b70;
+  // }
+
+  // au survol de la div "excerpt", on applique les propriétés suivantes sur le pseudo élément (::after)
+  &:hover::after {
+    background-color: black;
+    opacity: 0.2;
+  }
+
+}

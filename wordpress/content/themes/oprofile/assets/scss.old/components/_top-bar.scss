@@ -1,0 +1,21 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+
+    &__logo {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &__actions {
+        a {
+            color: $main-text-color;
+            text-decoration: none;
+        }
+    }
+
+    &__burger-button {
+
+    }
+}

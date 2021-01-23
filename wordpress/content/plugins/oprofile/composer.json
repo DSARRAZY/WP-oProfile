@@ -1,0 +1,13 @@
+{
+    "name": "wp-mm-oclock/oprofile",
+    "authors": [
+        {
+            "name": "LorisOclock",
+            "email": "loris@oclock.io"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"oProfile\\": "."}
+    }
+}

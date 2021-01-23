@@ -1,0 +1,11 @@
+li.all {
+    display: none;
+}
+
+li.publish {
+    display: none;
+}
+
+li.pending {
+    display: none;
+}
